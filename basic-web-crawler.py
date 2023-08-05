@@ -26,3 +26,5 @@ if __name__ == "__main__":
 
 
     get_all_product_links()
+
+#to be revisited has some errors 
