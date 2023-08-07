@@ -8,12 +8,21 @@ pygame.display.set_caption("Star War Ipata")
 
 BG = pygame.transform.scale(pygame.image.load("stage.jpg"), (WIDTH, HEIGHT))
 
+PLAYER_WIDTH = 60
+PLAYER_HEIGHT = 80
+
+PLAYER_VEL = 8
+
 def draw():
     WIN.blit(BG, (0, 0))
+
+    pygame.draw.rect(WIN, "orange", player)
     pygame.display.update()
 
 def main():
     run = True
+
+    player =  pygame.Rect(200, HEIGHT - PLAYER_HEIGHT, PLAYER_WIDTH, PLAYER_HEIGHT)
 
     while run:
         for event in pygame.event.get():
@@ -21,7 +30,12 @@ def main():
                 run = False
                 break
 
-        draw()
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_LEFT]:
+            player.x -= PLAYER_VEL
+            
+        
+        draw(player)
 
     pygame.quit()
 
