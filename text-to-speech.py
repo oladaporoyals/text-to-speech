@@ -1,5 +1,5 @@
 import pyttsx3
-import PyPDF2
+import PyPDF4
 
 # Replace the pdf file with the path to your own PDF file
 pdf_path = r'C:\Users\DAPO\Documents\python projects\file.pdf'  # Use raw string to avoid escape sequence issues
