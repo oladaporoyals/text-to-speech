@@ -13,7 +13,7 @@ PLAYER_HEIGHT = 80
 
 PLAYER_VEL = 8
 
-def draw():
+def draw(player):
     WIN.blit(BG, (0, 0))
 
     pygame.draw.rect(WIN, "orange", player)
@@ -24,6 +24,8 @@ def main():
 
     player =  pygame.Rect(200, HEIGHT - PLAYER_HEIGHT, PLAYER_WIDTH, PLAYER_HEIGHT)
 
+    
+
     while run:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -33,6 +35,8 @@ def main():
         keys = pygame.key.get_pressed()
         if keys[pygame.K_LEFT]:
             player.x -= PLAYER_VEL
+        if keys[pygame.K_RIGHT]:
+            player.x += PLAYER_VEL
             
         
         draw(player)
