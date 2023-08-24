@@ -14,3 +14,4 @@ def text_to_speech(text):
 
 value = input("put your words here, i would turn it to magic:")
 text_to_speech(value)
+#dont forget to install pip and the pyttsx3 package in your terminal
